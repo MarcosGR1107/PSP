@@ -1,0 +1,18 @@
+BARBERÍA - PROYECTO PARA APACHE NETBEANS (Maven)
+
+1. Descomprime el ZIP.
+2. Abre Apache NetBeans.
+3. File > Open Project (Archivo > Abrir proyecto).
+4. Elige la carpeta Barberia_NetBeans que contiene pom.xml.
+5. Pulsa Run Project (F6). Clase principal: Main.
+
+Versión introductoria sin arrays, turnos ni cortesTerminados.
+Incluye wait() para el barbero cuando no hay clientes pendientes
+y wait() para los clientes cuando las 4 plazas están ocupadas.
+
+ATENCIÓN:
+- Cada hilo Cliente solo intenta entrar una vez y termina al entrar;
+  NO espera a que su corte particular haya finalizado.
+- Tras completar los 10 cortes, el barbero continúa esperando
+  indefinidamente con wait(). Para detenerlo usa Stop en NetBeans.
+- Esta es una versión didáctica PARCIAL del problema.
