@@ -13,6 +13,12 @@ public class Mangas extends Thread {
     String name = "FabricaCuerpos";
 
     Taller miTaller;
+    int numEjecuciones;
+
+    public Mangas(Taller miTaller, int numEjecuciones) {
+        this.miTaller = miTaller;
+        this.numEjecuciones = numEjecuciones;
+    }
     
     
     @Override
