@@ -11,7 +11,15 @@ package tallercostura;
 public class Cuerpos extends Thread {
 
     String name = "FabricaCuerpos";
-Taller miTaller;
+    Taller miTaller;
+    int numEjecuciones;
+
+    public Cuerpos(Taller miTaller, int numEjecuciones) {
+        this.miTaller = miTaller;
+        this.numEjecuciones = numEjecuciones;
+    }
+    
+    
     
     @Override
     public void run() {

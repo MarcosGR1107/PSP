@@ -11,6 +11,13 @@ package tallercostura;
 public class Ensamblador extends Thread {
     String name = "Ensamblador";
     Taller miTaller;
+    int numPrendas;
+
+    public Ensamblador(Taller miTaller, int numPrendas) {
+        this.miTaller = miTaller;
+        this.numPrendas = numPrendas;
+    }
+    
     
     @Override
     public void run() {

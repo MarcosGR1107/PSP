@@ -15,9 +15,24 @@ public class TallerCostura {
      */
     public static void main(String[] args) {
         
-    int capacidadCestaMangas = 40;
-    int capacidadCestaCuerpos = 20; //Siempre será la mitad, por cada cuerpo dos mangas
+    int NumMangas = 40;
+    int NumCuerpos = 20; //Siempre será la mitad, por cada cuerpo dos mangas
+    
+    int capacidadCestaMangas = 5;
+    int capacidadCestaCuerpos = 5; 
         
+    Taller miTaller = new Taller(capacidadCestaMangas, capacidadCestaCuerpos);
+    
+    Mangas construyeMangas = new Mangas(miTaller, NumMangas);
+    construyeMangas.start();
+
+    Cuerpos construyeCuerpos = new Cuerpos(miTaller, NumCuerpos);
+    construyeCuerpos.start();
+
+    Ensamblador miEnsamblador = new Ensamblador(miTaller, NumCuerpos);
+    miEnsamblador.start();
+    
+    
     
     
     }
