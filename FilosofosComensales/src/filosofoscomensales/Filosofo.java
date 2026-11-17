@@ -19,13 +19,13 @@ public class Filosofo extends Thread {
     @Override
     public void run() {
         try {
-            System.out.println("Filosofo " + idFilosofo + ": \tPensando...");
-            Thread.sleep(ThreadLocalRandom.current().nextInt(500, 1001));
             while (ciclosCompletados < ciclosPorFilosofo) {
 
+                miMesa.pensarFilosofo(idFilosofo);
                 miMesa.comerFilosofo(idFilosofo);
                 miMesa.terminarComerFilosofo(idFilosofo);
                 ciclosCompletados++;
+                System.out.println("\nFilosofo "+idFilosofo + ": \t Ronda "+ ciclosCompletados + "/"+ciclosPorFilosofo + " completada.");
 
             }
             System.out.println("El filosofo " + idFilosofo + " ha terminado su ejecucion");

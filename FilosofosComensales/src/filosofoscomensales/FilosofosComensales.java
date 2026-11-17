@@ -2,7 +2,7 @@ package filosofoscomensales;
 
 public class FilosofosComensales {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         int numFilosofos = 5;
         int numRondas = 3;
         
@@ -14,6 +14,11 @@ public class FilosofosComensales {
             filosofo.start();
         }
         
+        for( int i = 0; i < filosofos.length; i++){
+            filosofos[i].join();
+        }
+        
+        System.out.println("PROGRAMA FINALIZADO");
     }
     
 }

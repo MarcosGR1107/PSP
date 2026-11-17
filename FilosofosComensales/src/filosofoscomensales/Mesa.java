@@ -4,6 +4,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Mesa {
 
+    int numFilosofosComiendo = 0;
     boolean[] numTenedores;
 
 //    int[] sillasFilosofos;
@@ -42,16 +43,25 @@ public class Mesa {
         numTenedores[izquierdo] = true;
         numTenedores[derecho] = true;
         System.out.println("\nFilosofo " + idFilosofo + ":\t Comiendo");
+        numFilosofosComiendo++;
+        System.out.println("Filosofos comiendo: \t"+numFilosofosComiendo);
         Thread.sleep(ThreadLocalRandom.current().nextInt(3000, 5001));
     }
 
     public synchronized void terminarComerFilosofo(int idFilosofo) {
         int izquierdo = idFilosofo - 1;
         int derecho = idFilosofo % numTenedores.length;
-        System.out.println("Filosofo " + idFilosofo + ": \tHa terminado de comer ");
-
+        System.out.println("\nFilosofo " + idFilosofo + ":\tHa terminado de comer ");
+        numFilosofosComiendo--;
+        System.out.println("Filosofos comiendo: \t"+numFilosofosComiendo);
         numTenedores[izquierdo] = false;
         numTenedores[derecho] = false;
         notify();
+    }
+    
+    public void pensarFilosofo(int idFilosofo) throws InterruptedException{
+        System.out.println("\nFilosofo "+ idFilosofo + ":\t Pensando...");
+        Thread.sleep(ThreadLocalRandom.current().nextInt(5000, 10001));
+        
     }
 }
