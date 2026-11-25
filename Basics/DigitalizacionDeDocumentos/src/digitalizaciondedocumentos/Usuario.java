@@ -28,6 +28,7 @@ public class Usuario extends Thread {
             escaner.depositarDocumento(id);
             escaner.esperarDigitalizacion(id);
             
+           
             System.out.println("Usuario " + id + " se va");
         } catch (InterruptedException ex) {
             System.out.println("Error en la ejecución de usuario " + id);
